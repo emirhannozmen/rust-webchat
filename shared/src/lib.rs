@@ -1,12 +1,15 @@
-// shared/src/lib.rs
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct ChatMessage {
     pub sender: String,
     pub content: String,
+    pub room: String, 
+    pub timestamp: String,
 }
 
 pub fn init_logger() {
-    env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();
+    let _ = env_logger::builder()
+        .filter_level(log::LevelFilter::Info)
+        .try_init();
 }
