@@ -1,0 +1,15 @@
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { workspace = true }
+tokio-tungstenite = { workspace = true }
+futures-util = { workspace = true }
+shared = { path = "../shared" }
+log = { workspace = true }
+env_logger = { workspace = true }
+anyhow = { workspace = true }
+eframe = { workspace = true }
+egui = { workspace = true }
